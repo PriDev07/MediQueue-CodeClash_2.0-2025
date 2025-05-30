@@ -11,7 +11,7 @@ function App() {
             <span className="text-2xl font-bold text-blue-600">MediQueue</span>
           </div>
           <a 
-            href="https://github.com/yourusername/mediqueue"
+            href="https://github.com/PriDev07/MediQueue-hackVortex-2025"
             className="flex items-center text-gray-700 hover:text-blue-600 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
@@ -40,7 +40,7 @@ function App() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <a 
-                href="/mediqueue.apk" 
+                href="/web/src/assets/MediQueue.apk" 
                 className="bg-blue-600 text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-700 transition-colors flex items-center justify-center text-lg"
                 download
               >
@@ -124,17 +124,17 @@ function App() {
     <h2 className="text-3xl font-bold mb-12">See MediQueue in Action</h2>
     <div className="aspect-video bg-gray-200 rounded-2xl mb-8 flex gap-4 p-4 justify-center">
       <img 
-        src="/src/assets/ss2.png" 
+        src="/web/src/assets/ss2.png" 
         alt="Screenshot 1" 
         className="object-contain rounded-lg" 
       />
       <img 
-        src="/src/assets/ss1.png" 
+        src="/web/src/assets/ss1.png" 
         alt="Screenshot 2" 
         className="object-contain rounded-lg" 
       />
       <img 
-        src="/src/assets/ss3.png" 
+        src="/web/src/assets/ss3.png" 
         alt="Screenshot 3" 
         className="object-contain rounded-lg" 
       />
