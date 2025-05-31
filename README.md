@@ -35,19 +35,22 @@ MediQueue delivers a comprehensive and scalable system for managing hospital que
 ## 📸 Application Snapshots
 
 ### 📲 Mobile App - Patient View [Dashboard]
-![Screenshot_2025-05-30_at_3 57 04_PM-removebg-preview 1](https://github.com/user-attachments/assets/217fc394-af41-4381-88dd-1a453cb1b1ff)
+<img src="web/src/assets/ss1.png" alt="Doctor Queue" width="250"/>
 
 - View a snapshot of your current *queue status* and *notifications*.
 - Easily navigate to *doctor* or *bed queues* with a single tap.
 
 ### 📲 Mobile App - Patient View [Doctor Queue]
-![Untitled_design_1-removebg-preview 1](https://github.com/user-attachments/assets/177a5497-7445-41a0-beb1-d0d6010484ee)
+<img src="web/src/assets/ss2.png" alt="Doctor Queue" width="250"/>
+
+
 
 - Easily *join queues* remotely.
 - View *real-time progress* and *estimated wait times*.
 
 ### 📲 Mobile App - Patient View [Bed Queue]
-![Screenshot_2025-05-30_at_4 03 02_PM-removebg-preview 1](https://github.com/user-attachments/assets/05a69c48-8122-4691-a10f-654bbf09d463)
+<img src="web/src/assets/ss3.png" alt="Doctor Queue" width="250"/>
+
 
 - Submit *bed requests* digitally without standing in lines.
 - Track *bed availability* and request *status updates* in real time.
@@ -55,31 +58,31 @@ MediQueue delivers a comprehensive and scalable system for managing hospital que
 ---
 
 ### 💻 Admin Portal - Web View [Dashboard]
-![Screenshot 2025-05-31 123020](https://github.com/user-attachments/assets/0cd60c94-2f13-4611-8883-3efbd81565c7)
+<img src="web/src/assets/d1.png" alt="Doctor Queue" width="1000"/>
 
 - Get a quick overview of key *metrics* like *active queues* and *available beds*.
 - Monitor *real-time hospital activity* from a single screen.
 
 ### 💻 Admin Portal - Web View [Doctor Management]
-![Screenshot 2025-05-31 123125](https://github.com/user-attachments/assets/70339aa4-fc58-4481-a12b-d78f1bf44288)
+<img src="web/src/assets/d2.png" alt="Doctor Queue" width="1000"/>
 
 - View and manage *doctor queues*.
 - Serve or skip *patients* and update *doctor availability*.
 
 ### 💻 Admin Portal - Web View [Bed Management]
-![Screenshot 2025-05-31 123211](https://github.com/user-attachments/assets/1f7b2aa9-7378-41f2-a299-b85db6321b33)
+<img src="web/src/assets/d3.png" alt="Doctor Queue" width="1000"/>
 
 - Track *bed occupancy* and handle *bed requests*.
 - Update *availability status* and manage *assignments* efficiently.
 
 ### 💻 Admin Portal - Web View [Queue Management]
-![Screenshot 2025-05-31 145433](https://github.com/user-attachments/assets/b1c1155e-eb4d-46fc-933a-b889e1ce936f)
+<img src="web/src/assets/d4.png" alt="Doctor Queue" width="1000"/>
 
 - Oversee all *active queues* for *doctors* and *beds*.
 - View *patient positions, serve or skip entries in **real time*.
 
 ### 💻 Admin Portal - Web View [Settings]
-![Screenshot 2025-05-31 145315](https://github.com/user-attachments/assets/5cd485ea-c9c2-4e5f-bf01-9aa31acb0826)
+<img src="web/src/assets/d5.png" alt="Doctor Queue" width="1000"/>
 
 - Configure *user roles, **notifications, and **system preferences*.
 - Control *access levels* for *patients, **staff, and **administrators*.
