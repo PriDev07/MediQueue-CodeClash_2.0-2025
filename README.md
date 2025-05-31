@@ -32,6 +32,10 @@ MediQueue delivers a comprehensive and scalable system for managing hospital que
 - 🕐 **Estimated Wait Times**: Transparency on waiting periods for better planning.
 
 ---
+🚀 **[Try the App Now](https://mediqueue-ruddy.vercel.app/)**  
+*(Click to open the live version)*
+---
+---
 ## 📸 Application Snapshots
 
 ### 📲 Mobile App - Patient View [Dashboard]
