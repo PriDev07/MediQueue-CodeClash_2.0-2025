@@ -124,25 +124,23 @@ function App() {
     <h2 className="text-3xl font-bold mb-12">See MediQueue in Action</h2>
     <div className="aspect-video bg-gray-200 rounded-2xl mb-8 flex gap-4 p-4 justify-center">
       <img 
-        src="/src/assets/ss2.png" 
+        src="./web/src/assets/ss2.png" 
         alt="Screenshot 1" 
         className="object-contain rounded-lg" 
       />
       <img 
-        src="/src/assets/ss1.png" 
+        src="https://github.com/PriDev07/MediQueue-hackVortex-2025/blob/main/web/src/assets/ss1.png" 
         alt="Screenshot 2" 
         className="object-contain rounded-lg" 
       />
       <img 
-        src="/src/assets/ss3.png" 
+        src="https://github.com/PriDev07/MediQueue-hackVortex-2025/blob/main/web/src/assets/ss3.png" 
         alt="Screenshot 3" 
-        className="object-contain rounded-lg" 
+        className="object-contain rounded-lg"
       />
     </div>
   </div>
 </section>
-
-
         <footer className="py-8 px-6 bg-white border-t">
           <div className="max-w-6xl mx-auto text-center text-gray-600">
             <p>Created by Team CodeSavvy for HackVortex 2025</p>
