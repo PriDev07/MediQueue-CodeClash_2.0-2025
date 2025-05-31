@@ -35,13 +35,13 @@ MediQueue delivers a comprehensive and scalable system for managing hospital que
 ## 📸 Application Snapshots
 
 ### 📲 Mobile App - Patient View [Dashboard]
-<img src="web/src/assets/ss1.png" alt="Doctor Queue" width="250"/>
+<img src="web/src/assets/ss2.png" alt="Doctor Queue" width="250"/>
 
 - View a snapshot of your current *queue status* and *notifications*.
 - Easily navigate to *doctor* or *bed queues* with a single tap.
 
 ### 📲 Mobile App - Patient View [Doctor Queue]
-<img src="web/src/assets/ss2.png" alt="Doctor Queue" width="250"/>
+<img src="web/src/assets/ss1.png" alt="Doctor Queue" width="250"/>
 
 
 
@@ -76,13 +76,13 @@ MediQueue delivers a comprehensive and scalable system for managing hospital que
 - Update *availability status* and manage *assignments* efficiently.
 
 ### 💻 Admin Portal - Web View [Queue Management]
-<img src="web/src/assets/d4.png" alt="Doctor Queue" width="1000"/>
+<img src="web/src/assets/d5.png" alt="Doctor Queue" width="1000"/>
 
 - Oversee all *active queues* for *doctors* and *beds*.
 - View *patient positions, serve or skip entries in **real time*.
 
 ### 💻 Admin Portal - Web View [Settings]
-<img src="web/src/assets/d5.png" alt="Doctor Queue" width="1000"/>
+<img src="web/src/assets/d4.png" alt="Doctor Queue" width="1000"/>
 
 - Configure *user roles, **notifications, and **system preferences*.
 - Control *access levels* for *patients, **staff, and **administrators*.
