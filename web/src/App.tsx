@@ -124,17 +124,17 @@ function App() {
     <h2 className="text-3xl font-bold mb-12">See MediQueue in Action</h2>
     <div className="aspect-video bg-gray-200 rounded-2xl mb-8 flex gap-4 p-4 justify-center">
       <img 
-        src="./web/src/assets/ss2.png" 
+        src="https://i.ibb.co/WJ4qRgq/Untitled-design-1-removebg-preview.png" 
         alt="Screenshot 1" 
         className="object-contain rounded-lg" 
       />
       <img 
-        src="https://github.com/PriDev07/MediQueue-hackVortex-2025/blob/main/web/src/assets/ss1.png" 
+        src="https://i.ibb.co/f5jXgnT/Screenshot-2025-05-30-at-3-57-04-PM-removebg-preview.png"
         alt="Screenshot 2" 
         className="object-contain rounded-lg" 
       />
       <img 
-        src="https://github.com/PriDev07/MediQueue-hackVortex-2025/blob/main/web/src/assets/ss3.png" 
+        src="https://i.ibb.co/RkXwqF7v/Screenshot-2025-05-30-at-4-03-02-PM-removebg-preview.png" 
         alt="Screenshot 3" 
         className="object-contain rounded-lg"
       />
