@@ -40,7 +40,7 @@ function App() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <a 
-                href="/web/src/assets/MediQueue.apk" 
+                href="https://www.dropbox.com/scl/fi/xn4eus6ztkfkw1ua5mxfd/MediQueue.apk?rlkey=51wfqow2k9gnkwfsxvrnw052w&st=bnmw4izk&dl=1" 
                 className="bg-blue-600 text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-700 transition-colors flex items-center justify-center text-lg"
                 download
               >
