@@ -143,7 +143,7 @@ function App() {
 </section>
         <footer className="py-8 px-6 bg-white border-t">
           <div className="max-w-6xl mx-auto text-center text-gray-600">
-            <p>Created by Team CodeSavvy for HackVortex 2025</p>
+            <p>Created by Team CodeSavvy for CodeClash 2.0 2025</p>
           </div>
         </footer>
       </main>
