@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:wait_no_more/core/constants/color_constants.dart';
+import 'package:wait_no_more/providers/clinicProvider.dart';
 
 class HomeTop extends StatelessWidget {
   const HomeTop({super.key});
@@ -11,7 +13,6 @@ class HomeTop extends StatelessWidget {
       decoration: BoxDecoration(color: AppColors.blue500),
       padding: EdgeInsets.all(18.sp),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 7.h),
@@ -36,12 +37,13 @@ class HomeTop extends StatelessWidget {
               border: Border.all(color: AppColors.gray400),
             ),
             child: TextField(
-              decoration: InputDecoration(
-                hintText: "Search clinics by name or city ....",
-                prefixIcon: Icon(Icons.search),
-                contentPadding: EdgeInsets.only(top: 1.1.h),
-              ),
-            ),
+  onChanged: (value) =>
+    context.read<ClinicProvider>().updateSearchQuery(value),
+  decoration: InputDecoration(
+    hintText: "Search clinics by name or city ....",
+    prefixIcon: Icon(Icons.search),
+  ),
+),
           ),
           SizedBox(height: 2.h),
         ],

@@ -3,19 +3,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-  Future<List<Clinic>> getClinics() async {
-    try {
-      QuerySnapshot snapshot = await _db.collection('clinics').get();
-
-      return snapshot.docs.map((doc) {
-        return Clinic.fromFirestore(doc);
-      }).toList();
-    } catch (e) {
-      ("Error fetching clinics: $e");
-      return [];
-    }
+  Stream<List<Clinic>> streamClinics() {
+    return _db.collection('clinics').snapshots().map((snapshot) {
+      return snapshot.docs.map((doc) => Clinic.fromFirestore(doc)).toList();
+    });
   }
 }
+
 
 class Clinic {
   final String id;

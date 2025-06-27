@@ -1,62 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
-import 'package:wait_no_more/services/firestore_service.dart';
+import 'package:provider/provider.dart';
 import 'package:wait_no_more/core/widgets/clinic_card.dart';
+import 'package:wait_no_more/providers/clinicProvider.dart';
 
-class ClinicsList extends StatefulWidget {
-  @override
-  _ClinicsListState createState() => _ClinicsListState();
-}
-
-class _ClinicsListState extends State<ClinicsList> {
-  final FirestoreService _firestoreService = FirestoreService();
-
-  late Future<List<Clinic>> _futureClinics;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadClinics();
-  }
-
-  void _loadClinics() {
-    _futureClinics = _firestoreService.getClinics();
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _loadClinics();
-  }
-
+class ClinicsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<Clinic>>(
-      future: _futureClinics,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return Padding(
-            padding: EdgeInsets.only(top: 30.h),
-            child: Center(child: CircularProgressIndicator()),
-          );
-        }
+    final clinics = context.watch<ClinicProvider>().clinics; // ✅ This is now the filtered list
 
-        if (!snapshot.hasData || snapshot.data!.isEmpty) {
-          return Center(child: Text("No clinics found."));
-        }
+    if (clinics.isEmpty) {
+      return Center(child: Text("No clinics found."));
+    }
 
-        final clinics = snapshot.data!;
-
-        return ListView.builder(
-          padding: EdgeInsets.zero,
-          itemCount: clinics.length,
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemBuilder: (BuildContext context, int index) {
-            final clinic = clinics[index];
-            return ClinicCard(clinic: clinic);
-          },
-        );
+    return ListView.builder(
+      itemCount: clinics.length,
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) {
+        final clinic = clinics[index];
+        return ClinicCard(clinic: clinic);
       },
     );
   }

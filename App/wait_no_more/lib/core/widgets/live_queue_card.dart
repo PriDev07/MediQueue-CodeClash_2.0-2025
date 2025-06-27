@@ -24,10 +24,11 @@ class _LiveQueueCardState extends State<LiveQueueCard> {
 
   Future<void> fetchQueue() async {
     try {
-      final doc = await FirebaseFirestore.instance
-          .collection('clinics')
-          .doc(widget.clinicId)
-          .get();
+      final doc =
+          await FirebaseFirestore.instance
+              .collection('clinics')
+              .doc(widget.clinicId)
+              .get();
 
       if (doc.exists && doc.data() != null) {
         final data = doc.data() as Map<String, dynamic>;
@@ -40,7 +41,10 @@ class _LiveQueueCardState extends State<LiveQueueCard> {
           queue.add({
             'token': i,
             'status': i == currentStatus ? 'In Progress' : 'Waiting',
-            'time': i == currentStatus ? '5 min' : '${(i - currentStatus + 1) * 10} min',
+            'time':
+                i == currentStatus
+                    ? '5 min'
+                    : '${(i - currentStatus + 1) * 10} min',
           });
         }
 
@@ -97,7 +101,6 @@ class _LiveQueueCardState extends State<LiveQueueCard> {
     );
   }
 }
-
 
 class QueueItem extends StatelessWidget {
   final Map<String, dynamic> data;

@@ -77,7 +77,7 @@ class DetailsHomeTop extends StatelessWidget {
                   ),
                   SizedBox(width: 1.w),
                   Text(
-                    "$location * 2.3 km", // You can also fetch distance from user later
+                    "$location * 2.3 km",
                     style: TextStyle(color: AppColors.white),
                   ),
                 ],

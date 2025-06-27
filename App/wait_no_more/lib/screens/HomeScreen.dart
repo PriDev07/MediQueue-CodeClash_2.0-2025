@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:wait_no_more/core/constants/color_constants.dart';
 import 'package:wait_no_more/core/widgets/clinic_card.dart';
 import 'package:wait_no_more/core/widgets/clinic_list.dart';
 import 'package:wait_no_more/core/widgets/home_top.dart';
+import 'package:wait_no_more/providers/clinicProvider.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -12,14 +14,15 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+  @override
+void dispose() {
+  context.read<ClinicProvider>().disposeProvider(); // Clean up stream
+  super.dispose();
+}
+
   Future<void> _refresh() async {
-    // You can perform any refresh logic here.
-    // For example, fetching new data from API, or resetting state.
 
-    // Just simulating a network call delay here.
     await Future.delayed(const Duration(seconds: 1));
-
-    // Then call setState to rebuild UI if necessary
     setState(() {});
   }
 
@@ -30,7 +33,7 @@ class _HomescreenState extends State<Homescreen> {
       body: RefreshIndicator(
         onRefresh: _refresh,
         child: SingleChildScrollView(
-          physics: const AlwaysScrollableScrollPhysics(), // Ensure scroll works even if content less
+          physics: const AlwaysScrollableScrollPhysics(),
           scrollDirection: Axis.vertical,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

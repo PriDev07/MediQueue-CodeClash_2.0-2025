@@ -32,7 +32,7 @@ class AppColors {
   static const Color gray600 = Color(0xFF4B5563);
   static const Color gray800 = Color(0xFF1F2937);
 
-  // Border Colors (not defined in main palette but mentioned)
+  // Border Colors 
   static const Color borderBlue200 = Color(0xFFBFDBFE);
   static const Color borderGreen200 = Color(0xFFBBF7D0);
 
