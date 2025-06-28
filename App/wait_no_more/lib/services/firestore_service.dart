@@ -10,7 +10,6 @@ class FirestoreService {
   }
 }
 
-
 class Clinic {
   final String id;
   final String name;
@@ -18,7 +17,9 @@ class Clinic {
   final double rated;
   final int currentStatus;
   final int tokensProvided;
-  final Map<String, dynamic> bedSection; // 👈 Add this
+  final Map<String, dynamic> bedSection;
+  final Map<String, dynamic> doctors;
+  final GeoPoint loc;
 
   Clinic({
     required this.id,
@@ -28,6 +29,8 @@ class Clinic {
     required this.currentStatus,
     required this.tokensProvided,
     required this.bedSection,
+    required this.doctors,
+    required this.loc
   });
 
   factory Clinic.fromFirestore(DocumentSnapshot doc) {
@@ -44,6 +47,11 @@ class Clinic {
       currentStatus: data['currentStatus'],
       tokensProvided: data['TokensProvided'],
       bedSection: data['bedSection'] ?? {},
+      doctors:
+          data['doctors'] != null
+              ? Map<String, dynamic>.from(data['doctors'])
+              : {},
+      loc: data['loc']
     );
   }
 }

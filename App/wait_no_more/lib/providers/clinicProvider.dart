@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:wait_no_more/services/firestore_service.dart';
+import 'package:geolocator/geolocator.dart';
 
 class ClinicProvider with ChangeNotifier {
   final FirestoreService _firestoreService = FirestoreService();
@@ -11,46 +12,111 @@ class ClinicProvider with ChangeNotifier {
 
   late StreamSubscription<List<Clinic>> _clinicSubscription;
 
+  bool _locationEnabled = false;
+  double _maxDistanceMeters = 5000;
+  Position? _userPosition;
+
   List<Clinic> get clinics => _filteredClinics;
+  Position? get userPosition => _userPosition;
+  bool get locationEnabled => _locationEnabled;
 
   ClinicProvider() {
-    _listenToClinics(); // Start real-time Firestore subscription
+    _listenToClinics();
   }
 
-  /// Listens to real-time clinic updates and filters on data change
   void _listenToClinics() {
-    _clinicSubscription = _firestoreService.streamClinics().listen((clinicList) {
+    _clinicSubscription = _firestoreService.streamClinics().listen((
+      clinicList,
+    ) {
       _allClinics = clinicList;
-      _applySearch(); // Keep search applied with fresh data
+      _applySearch();
     });
   }
 
-  /// Updates the search query and filters the list
   void updateSearchQuery(String query) {
-  _searchQuery = query.toLowerCase();
-  _applySearch();
-}
-
-void _applySearch() {
-  if (_searchQuery.isEmpty) {
-    _filteredClinics = _allClinics;
-  } else {
-    _filteredClinics = _allClinics.where((clinic) {
-      return clinic.name.toLowerCase().contains(_searchQuery) ||
-             clinic.location.toLowerCase().contains(_searchQuery);
-    }).toList();
+    _searchQuery = query.toLowerCase();
+    _applySearch();
   }
-  notifyListeners(); // 🔁 Must be called
-}
 
+  Future<void> enableLocationAndSort() async {
+    try {
+      _userPosition = await _determinePosition();
+      _locationEnabled = true;
+      _applySearch();
+    } catch (e) {
+      debugPrint('Location error: $e');
+      _locationEnabled = false;
+      _applySearch();
+    }
+  }
 
-  /// Optional: manual refresh logic if needed
+  void disableLocationSort() {
+    _locationEnabled = false;
+    _userPosition = null;
+    _applySearch();
+  }
+
+  void _applySearch() {
+    List<Clinic> tempClinics = _allClinics;
+
+    // Filter by search query
+    if (_searchQuery.isNotEmpty) {
+      tempClinics =
+          tempClinics.where((clinic) {
+            return clinic.name.toLowerCase().contains(_searchQuery) ||
+                clinic.location.toLowerCase().contains(_searchQuery);
+          }).toList();
+    }
+
+    // Sort by distance if location enabled
+    if (_locationEnabled && _userPosition != null) {
+      tempClinics.sort((a, b) {
+        double distA = Geolocator.distanceBetween(
+          _userPosition!.latitude,
+          _userPosition!.longitude,
+          a.loc.latitude,
+          a.loc.longitude,
+        );
+        double distB = Geolocator.distanceBetween(
+          _userPosition!.latitude,
+          _userPosition!.longitude,
+          b.loc.latitude,
+          b.loc.longitude,
+        );
+        return distA.compareTo(distB);
+      });
+    }
+
+    _filteredClinics = tempClinics;
+    notifyListeners();
+  }
+
   Future<void> refreshClinics() async {
-    // Can be used if you want to refetch manually
+    // Optional reload logic
   }
 
-  /// Clean up the stream when widget is disposed
   void disposeProvider() {
     _clinicSubscription.cancel();
   }
+}
+
+// Helper
+Future<Position> _determinePosition() async {
+  bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+  if (!serviceEnabled) {
+    throw Exception('Location services are disabled.');
+  }
+
+  LocationPermission permission = await Geolocator.checkPermission();
+  if (permission == LocationPermission.denied) {
+    permission = await Geolocator.requestPermission();
+    if (permission == LocationPermission.denied) {
+      throw Exception('Location permissions are denied');
+    }
+  }
+  if (permission == LocationPermission.deniedForever) {
+    throw Exception('Location permissions are permanently denied');
+  }
+
+  return await Geolocator.getCurrentPosition();
 }
