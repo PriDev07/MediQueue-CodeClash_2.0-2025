@@ -147,9 +147,8 @@ MediQueue delivers a comprehensive and scalable system for managing hospital que
 
 ### 🏥 Admin/Staff Workflow
 1. View & manage doctor queues  
-2. Serve or skip patients  
-3. View & process bed requests  
-4. Update bed occupancy status  
+2. View & process bed requests  
+3. Update bed occupancy status  
 
 ---
 
