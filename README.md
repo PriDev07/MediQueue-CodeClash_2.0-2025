@@ -132,7 +132,7 @@ MediQueue delivers a comprehensive and scalable system for managing hospital que
 ### ☁️ Deployment & DevOps
 - **Vercel**: Frontend hosting
 - **Netlify / Render**: Backend deployment
-- **Git & GitHub**: Version control & collaboration
+- **Git & GitHub**: Version control
 
 ---
 
