@@ -153,7 +153,7 @@ MediQueue delivers a comprehensive and scalable system for managing hospital que
 ---
 ### 👤 Team Details
 Connect with us :D
-1. Priyanshu Lohani -  
+1. Priyanshu Lohani -  https://www.linkedin.com/in/priyanshulohani/
 2. Rahul Lodhi
 3. Oshika Jain - https://www.linkedin.com/in/oshika-jain-977b29281/
 
