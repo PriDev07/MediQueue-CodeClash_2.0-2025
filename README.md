@@ -151,7 +151,11 @@ MediQueue delivers a comprehensive and scalable system for managing hospital que
 3. Update bed occupancy status  
 
 ---
-
+### 👤 Team Details
+Connect with us :D
+1. Priyanshu Lohani -  
+2. Rahul Lodhi
+3. Oshika Jain - https://www.linkedin.com/in/oshika-jain-977b29281/
 
 ## 📄 License
 
